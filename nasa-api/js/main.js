@@ -12,12 +12,18 @@ document.querySelector('button').addEventListener('click', ()=>{
 
       document.querySelector('h2').innerText = data.title
       document.querySelector('h3').innerText = data.explanation
-
+      let img = document.querySelector('img') 
+      let vid = document.querySelector('iframe')
       if(data.media_type == 'image'){
+        vid.classList.add("hidden")
         document.querySelector('img').src = data.hdurl
+        img.classList.remove("hidden")
+
       }
       else{
+        img.classList.add("hidden")
         document.querySelector('iframe').src = data.url
+        vid.classList.remove("hidden")
       }
       
     }) 
